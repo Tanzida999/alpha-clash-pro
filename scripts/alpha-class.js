@@ -4,6 +4,7 @@
 // homeSection.classList.add('hidden')
 // // console.log(homeSection.classList)
 
+
 // //step-2: show the playground
 // const playgroundSection = document.getElementById('play-ground');
 // // console.log(playgroundSection.classList)
@@ -28,6 +29,21 @@ function handleKeyboardKeyUpEvent(){
      //check matched or not
      if(playerPressed === expectedAlphabet){
         console.log('You got a Point ^_^ ');
+        //update score
+        //1.get the current score
+        const currentScoreElement = document.getElementById('current-score');
+        const currentScoreText = currentScoreElement.innerText;
+        const currentScore = parseInt(currentScoreText);
+        console.log(currentScore);
+        //2.Increase the score by one
+        const newScore = currentScore + 1;
+        //3.Show the updates score
+        currentScoreElement.innerText = newScore;
+
+
+
+        //start a new round
+
         console.log('You have pressed correctly', expectedAlphabet);
         removeBackgroundColorById(expectedAlphabet);
         continueGame();
@@ -35,6 +51,14 @@ function handleKeyboardKeyUpEvent(){
 }
 else{
     console.log('You Missed. You lost a life.');
+    //Step-1: get the current life number
+    const currentLifeELement = document.getElementById('current-life');
+    const currentLifeText = currentLifeELement.innerText;
+    const currentLife = parseInt(currentLifeText);
+    //step-2: reduce the life count
+    const newLife = currentLife - 1 ;
+    //step-3:Updated life count
+    currentLifeELement.innerText = newLife;
 }
 
 }
