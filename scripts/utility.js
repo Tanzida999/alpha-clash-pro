@@ -2,8 +2,8 @@ function getARandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetString.split('');
 
-    const randomNumber = Math.random()*25;
-    const index = Math.round(randomNumber);
+    const randomNumber = Math.random()*25;//Generate a random Number
+    const index = Math.round(randomNumber); //coverting float to Interger 
     const alphabet = alphabets[index];
     return alphabet;
 }
@@ -19,6 +19,11 @@ function showElementById(elementId){
     const element = document.getElementById(elementId);
     element.classList.remove('hidden');
 
+}
+
+function removeBackgroundColorById(elementId){
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-orange-400');
 }
 
 function setBackgroundColorById(elementId){

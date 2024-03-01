@@ -9,6 +9,34 @@
 // // console.log(playgroundSection.classList)
 // playgroundSection.classList.remove('hidden')
 // }
+// function handleKeyBoardButtonPress(){
+//     console.log('Button Pressed');
+// }
+
+// //capture keyboard keypress
+// document.addEventListener('keyup', handleKeyBoardButtonPress)
+
+function handleKeyboardKeyUpEvent(){
+    const playerPressed = event.key;
+    console.log('Player Pressed',playerPressed);
+
+    //Get the expected to press
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    const currentAlphabet = currentAlphabetElement.innerText;       
+    const expectedAlphabet = currentAlphabet.toLocaleLowerCase();
+    console.log(playerPressed,expectedAlphabet);
+     //check matched or not
+     if(playerPressed === expectedAlphabet){
+        console.log('You got a Point ^_^ ');
+
+}
+else{
+    console.log('You Missed. You lost a life.');
+}
+
+}
+
+document.addEventListener('keyup', handleKeyboardKeyUpEvent);
 function continueGame(){
     //step-1:Generate a random alphabet
     const alphabet = getARandomAlphabet();
